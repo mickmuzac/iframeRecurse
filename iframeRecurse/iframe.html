@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<span>Recursive iframes are fun!</span>
+		<iframe style="width:100%; height:100%;" id="hi"></iframe>
+
+		<script>
+			var testNum = parseInt(window.location.search.replace( "?", "" )) - 1;
+			var numFrames = 100;
+
+			if(testNum > 0 ){
+				document.getElementById("hi").src = "/iframeRecurse/iframe.html?" + testNum;
+				console.log(testNum);
+			}
+			
+			else if(isNaN(testNum)){
+			
+				document.getElementById("hi").src = "/iframeRecurse/iframe.html?" + numFrames;
+				console.log("Start!");
+			}
+		</script>
+	</body>
+</html>
